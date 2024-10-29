@@ -1,8 +1,8 @@
-@php
+{{-- @php
     $id = Auth::guard('client')->id();
     $client = App\Models\Client::find($id);
     $status = $client->status;
-@endphp
+@endphp --}}
 <div class="vertical-menu">
 
     <div data-simplebar class="h-100">
@@ -91,13 +91,13 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li>
-                    <a href="{{ route('all.coupon') }}">
+                    <a href="">
                         <span data-key="t-calendar">All Coupon</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('add.coupon') }}">
+                    <a href="">
                         <span data-key="t-chat">Add Coupon</span>
                     </a>
                 </li>
@@ -112,7 +112,7 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li>
-                    <a href="{{ route('all.client.orders') }}">
+                    <a href="">
                         <span data-key="t-calendar">All Orders</span>
                     </a>
                 </li>
@@ -147,9 +147,9 @@
             </ul>
         </li>
 
-        @else
+        {{-- @else
 
-        @endif
+        @endif --}}
 
 
 

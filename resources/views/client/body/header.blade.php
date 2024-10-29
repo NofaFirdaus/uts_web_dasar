@@ -163,10 +163,10 @@
                 </button>
             </div>
 
-            @php
+            {{-- @php
                  $id = Auth::guard('client')->id();
                  $profileData = App\Models\Client::find($id);
-            @endphp
+            @endphp --}}
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item bg-light-subtle border-start border-end" id="page-header-user-dropdown"
