@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark osahan-nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-light osahan-nav shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ route('index') }}"><img alt="logo"
                 src="{{ asset('frontend/img/logo.png') }}"></a>
@@ -13,18 +13,15 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="offers.html"><i class="icofont-sale-discount"></i> Offers <span
-                            class="badge badge-warning">New</span></a>
+                            class="badge badge-danger">New</span></a>
                 </li>
-                <li class="nav-item dropdown">
-                    {{-- <a class="nav-link" href="{{ route('list.restaurant') }}" role="button" aria-haspopup="true"
-                        aria-expanded="false"> --}}
-                        {{-- Restaurants --}}
-                    {{-- </a> --}}
+                {{-- <li class="nav-item dropdown">
+                    <a class="nav-link" href="{{ route('list.restaurant') }}" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Restaurants
+                    </a>
 
-                </li>
-
-
-
+                </li> --}}
                 @auth
                     @php
                         $id = Auth::user()->id;
@@ -59,9 +56,6 @@
                         </a>
                     </li>
                 @endauth
-
-
-
                 {{-- @php
                     $total = 0;
                     $cart = session()->get('cart', []);
@@ -79,7 +73,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-shopping-basket"></i> Cart
-                        {{-- <span class="badge badge-success">{{ count((array) session('cart')) }}</span> --}}
+                        <span class="badge badge-success">{{ count((array) session('cart')) }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-cart-top p-0 dropdown-menu-right shadow-sm border-0">
 
