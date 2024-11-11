@@ -47,8 +47,20 @@
                                         <p class="text-muted mt-2">Sign in to continue to Client.</p>
                                     </div>
 
+                                    {{-- @if ($errors->any())
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    @endif
 
-                                    <form class="mt-4 pt-2" action="" method="post">
+                                    @if (Session::has('error'))
+                                        <li>{{ Session::get('error') }}</li>
+                                    @endif
+                                    @if (Session::has('success'))
+                                        <li>{{ Session::get('success') }}</li>
+                                    @endif --}}
+                                    <form class="mt-4 pt-2" action="{{ route('client.login_submit') }}" method="post">
+                                        @csrf
 
                                         <div class="mb-3">
                                             <label class="form-label">Email</label>
@@ -62,7 +74,7 @@
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <div class="">
-                                                        <a href="{{ route('admin.forget_password') }}"
+                                                        <a href="{{ route('admin.forgetPassword') }}"
                                                             class="text-muted">Forgot password?</a>
                                                     </div>
                                                 </div>
@@ -280,26 +292,26 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
-        //  @if (Session::has('message'))
-        //  var type = "{{ Session::get('alert-type', 'info') }}"
-        //  switch(type){
-        //     case 'info':
-        //     toastr.info(" {{ Session::get('message') }} ");
-        //     break;
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
 
-        //     case 'success':
-        //     toastr.success(" {{ Session::get('message') }} ");
-        //     break;
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
 
-        //     case 'warning':
-        //     toastr.warning(" {{ Session::get('message') }} ");
-        //     break;
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
 
-        //     case 'error':
-        //     toastr.error(" {{ Session::get('message') }} ");
-        //     break;
-        //  }
-        //  @endif
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
     </script>
 
 

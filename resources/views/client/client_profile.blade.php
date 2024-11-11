@@ -98,7 +98,7 @@
                 <input class="form-control" name="cover_photo" type="file"  id="image" >
             </div>
 
-            <img id="showImage" src="" alt="" class="p-1 bg-primary" width="210" height="100">
+            {{-- <img id="showImage" src="" alt="" class="p-1 bg-primary" width="210" height="100"> --}}
 
         </div>
     </div>

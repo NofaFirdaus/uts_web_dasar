@@ -46,65 +46,78 @@
                                         <p class="text-muted mt-2">Sign in to continue to Client.</p>
                                     </div>
 
+                                    {{-- @if ($errors->any())
+    @foreach ($errors->all() as $error)
+        <li>{{$error }}</li>
+    @endforeach
+@endif
 
-                                    {{-- <form class="mt-4 pt-2" action="{{ route('client.register.submit') }}"  method="post"> --}}
-                                    {{-- @csrf --}}
+@if (Session::has('error'))
+    <li>{{ Session::get('error') }}</li>
+@endif
+@if (Session::has('success'))
+    <li>{{ Session::get('success') }}</li>
+@endif --}}
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Restaurant Name</label>
-                                        <input type="text" name="name" class="form-control" id="name"
-                                            placeholder="Enter Name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Phone</label>
-                                        <input type="text" name="phone" class="form-control" id="phone"
-                                            placeholder="Enter Phone">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Address</label>
-                                        <input type="text" name="address" class="form-control" id="address"
-                                            placeholder="Enter Address">
-                                    </div>
+                                    <form class="mt-4 pt-2" action="{{ route('client.register.submit') }}"
+                                        method="post">
+                                        @csrf
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control" id="email"
-                                            placeholder="Enter Email">
-                                    </div>
-                                    <div class="mb-3">
-                                        <div class="d-flex align-items-start">
-                                            <div class="flex-grow-1">
-                                                <label class="form-label">Password</label>
-                                            </div>
-                                            <div class="flex-shrink-0">
-                                                <div class="">
-                                                    <a href="{{ route('admin.forget_password') }}"
-                                                        class="text-muted">Forgot password?</a>
+                                        <div class="mb-3">
+                                            <label class="form-label">Restaurant Name</label>
+                                            <input type="text" name="name" class="form-control" id="name"
+                                                placeholder="Enter Name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Phone</label>
+                                            <input type="text" name="phone" class="form-control" id="phone"
+                                                placeholder="Enter Phone">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Address</label>
+                                            <input type="text" name="address" class="form-control" id="address"
+                                                placeholder="Enter Address">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" name="email" class="form-control" id="email"
+                                                placeholder="Enter Email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex align-items-start">
+                                                <div class="flex-grow-1">
+                                                    <label class="form-label">Password</label>
+                                                </div>
+                                                <div class="flex-shrink-0">
+                                                    <div class="">
+                                                        <a href="{{ route('admin.forgetPassword') }}"
+                                                            class="text-muted">Forgot password?</a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="input-group auth-pass-inputgroup">
-                                            <input type="password" name="password" class="form-control"
-                                                placeholder="Enter password" aria-label="Password"
-                                                aria-describedby="password-addon">
-                                            <button class="btn btn-light shadow-none ms-0" type="button"
-                                                id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col">
-                                            <div class="form-check">
-
+                                            <div class="input-group auth-pass-inputgroup">
+                                                <input type="password" name="password" class="form-control"
+                                                    placeholder="Enter password" aria-label="Password"
+                                                    aria-describedby="password-addon">
+                                                <button class="btn btn-light shadow-none ms-0" type="button"
+                                                    id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                             </div>
                                         </div>
+                                        <div class="row mb-4">
+                                            <div class="col">
+                                                <div class="form-check">
 
-                                    </div>
-                                    <div class="mb-3">
-                                        <button class="btn btn-primary w-100 waves-effect waves-light"
-                                            type="submit">Register</button>
-                                    </div>
-                                    {{-- </form> --}}
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <button class="btn btn-primary w-100 waves-effect waves-light"
+                                                type="submit">Register</button>
+                                        </div>
+                                    </form>
 
                                     <div class="mt-4 pt-2 text-center">
                                         <div class="signin-other-title">
