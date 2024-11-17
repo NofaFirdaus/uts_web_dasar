@@ -129,7 +129,7 @@ class ClientController extends Controller
         $id = Auth::guard('client')->id();
         $profileData = Client::find($id);
 
-        return view('client.client_change_password', compact('profileData'));
+        return view('client.client_changUserPasswordUpdatee_password', compact('profileData'));
     }
 
     public function ClientPasswordUpdate(Request $request)
