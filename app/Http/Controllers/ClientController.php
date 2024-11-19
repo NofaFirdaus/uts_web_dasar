@@ -129,7 +129,7 @@ class ClientController extends Controller
         $id = Auth::guard('client')->id();
         $profileData = Client::find($id);
 
-        return view('client.client_changUserPasswordUpdatee_password', compact('profileData'));
+        return view('client.client_change_password', compact('profileData'));
     }
 
     public function ClientPasswordUpdate(Request $request)
@@ -141,6 +141,7 @@ class ClientController extends Controller
         ]);
 
         if (!Hash::check($request->old_password, $client->password)) {
+            dd("oke");
             $notification = array(
                 'message' => 'Old Password Does not Match!',
                 'alert-type' => 'error'
@@ -148,7 +149,6 @@ class ClientController extends Controller
 
             return back()->with($notification);
         }
-
         Client::whereId($client->id)->update([
             'password' => Hash::make($request->new_password)
         ]);
