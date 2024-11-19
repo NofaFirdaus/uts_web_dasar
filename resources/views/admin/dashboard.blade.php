@@ -77,7 +77,7 @@
         <script src="{{asset('backend/assets/libs/feather-icons/feather.min.js')}}"></script>
         <!-- pace js -->
         <script src="{{asset('backend/assets/libs/pace-js/pace.min.js')}}"></script>
-
+        <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
         <!-- apexcharts -->
         <script src="{{asset('backend/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
         {{asset('backend/')}}
@@ -88,6 +88,9 @@
         <script src="{{asset('backend/assets/js/pages/dashboard.init.js')}}"></script>
 
         <script src="{{asset('backend/assets/js/app.js')}}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="{{ asset('backend/assets/js/code.js') }}"></script>
 
     </body>
 

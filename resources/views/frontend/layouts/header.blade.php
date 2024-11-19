@@ -18,7 +18,7 @@
                 <li class="nav-item dropdown">
                     {{-- <a class="nav-link" href="{{ route('list.restaurant') }}" role="button" aria-haspopup="true"
                         aria-expanded="false"> --}}
-                        {{-- Restaurants --}}
+                    {{-- Restaurants --}}
                     {{-- </a> --}}
 
                 </li>

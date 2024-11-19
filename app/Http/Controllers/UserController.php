@@ -58,7 +58,7 @@ class UserController extends Controller
     public function ChangePassword(){
         return view('frontend.dashboard.change_password');
     }
-    public function ClientPasswordUpdate(Request $request)
+    public function UserPasswordUpdate(Request $request)
     {
         $user = Auth::guard('web')->user();
         $request->validate([
