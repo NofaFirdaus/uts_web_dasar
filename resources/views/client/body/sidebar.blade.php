@@ -20,132 +20,132 @@
                     </a>
                 </li>
                 {{-- @if ($status === '1') --}}
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="grid"></i>
-                            <span data-key="t-apps">Menu</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li>
-                                <a href="{{ route('all.menu') }}">
-                                    <span data-key="t-calendar">All Menu</span>
-                                </a>
-                            </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Menu</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('all.menu') }}">
+                                <span data-key="t-calendar">All Menu</span>
+                            </a>
+                        </li>
 
-                            <li>
-                                <a href="{{ route('add.menu') }}">
-                                    <span data-key="t-chat">Add Menu</span>
-                                </a>
-                            </li>
+                        <li>
+                            <a href="{{ route('add.menu') }}">
+                                <span data-key="t-chat">Add Menu</span>
+                            </a>
+                        </li>
 
-                        </ul>
-                    </li>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="grid"></i>
-                            <span data-key="t-apps">Product</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li>
-                                {{-- <a href="{{ route('all.product') }}">
-                        <span data-key="t-calendar">All Product</span>
-                    </a> --}}
-                            </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Product</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('all.product') }}">
+                                <span data-key="t-calendar">All Product</span>
+                            </a>
+                        </li>
 
-                            <li>
-                                {{-- <a href="{{ route('add.product') }}">
-                        <span data-key="t-chat">Add Product</span>
-                    </a> --}}
-                            </li>
+                        <li>
+                            <a href="{{ route('add.product') }}">
+                                <span data-key="t-chat">Add Product</span>
+                            </a>
+                        </li>
 
-                        </ul>
-                    </li>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="grid"></i>
-                            <span data-key="t-apps">Gallery</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li>
-                                {{-- <a href="{{ route('all.gallery') }}">
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Gallery</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="{{ route('all.gallery') }}">
                         <span data-key="t-calendar">All Gallery</span>
-                    </a> --}}
-                            </li>
+                    </a>
+                        </li>
 
-                            <li>
-                                {{-- <a href="{{ route('add.gallery') }}">
+                        <li>
+                            {{-- <a href="{{ route('add.gallery') }}">
                         <span data-key="t-chat">Add Gallery</span>
                     </a> --}}
-                            </li>
+                        </li>
 
-                        </ul>
-                    </li>
+                    </ul>
+                </li>
 
 
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="grid"></i>
-                            <span data-key="t-apps">Coupon</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li>
-                                {{-- <a href="{{ route('all.coupon') }}">
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Coupon</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            {{-- <a href="{{ route('all.coupon') }}">
                         <span data-key="t-calendar">All Coupon</span>
                     </a> --}}
-                            </li>
+                        </li>
 
-                            <li>
-                                {{-- <a href="{{ route('add.coupon') }}">
+                        <li>
+                            {{-- <a href="{{ route('add.coupon') }}">
                         <span data-key="t-chat">Add Coupon</span>
                     </a> --}}
-                            </li>
+                        </li>
 
-                        </ul>
-                    </li>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="grid"></i>
-                            <span data-key="t-apps">Manage Orders</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li>
-                                {{-- <a href="{{ route('all.client.orders') }}">
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Manage Orders</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            {{-- <a href="{{ route('all.client.orders') }}">
                         <span data-key="t-calendar">All Orders</span>
                     </a> --}}
-                            </li>
-                        </ul>
-                    </li>
+                        </li>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="grid"></i>
-                            <span data-key="t-apps">Manage Reports</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li>
-                                {{-- <a href="{{ route('client.all.reports') }}">
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Manage Reports</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            {{-- <a href="{{ route('client.all.reports') }}">
                         <span data-key="t-calendar">All Reports</span>
                     </a> --}}
-                            </li>
-                        </ul>
-                    </li>
+                        </li>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i data-feather="grid"></i>
-                            <span data-key="t-apps">Manage Reviews</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li>
-                                {{-- <a href="{{ route('client.all.reviews') }}">
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Manage Reviews</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            {{-- <a href="{{ route('client.all.reviews') }}">
                                     <span data-key="t-calendar">All Reviews</span>
                                 </a> --}}
-                            </li>
-                        </ul>
-                    </li>
+                        </li>
+                    </ul>
+                </li>
                 {{-- @else
                 @endif --}}
 

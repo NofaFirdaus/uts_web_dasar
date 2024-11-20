@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -79,8 +80,9 @@ class ClientController extends Controller
     {
         $id = Auth::guard('client')->id();
         $profileData = Client::find($id);
+        $city = City::latest()->get();
 
-        return view('client.client_profile', compact('profileData'));
+        return view('client.client_profile', compact('profileData','city'));
     }
 
     public function ClientProfileStore(Request $request)
@@ -105,6 +107,14 @@ class ClientController extends Controller
                 $this->deleteOldImage($oldPhotoPath);
             }
         }
+        // if ($request->hasFile('cover_photo')) {
+        //     $file1 = $request->file('cover_photo');
+        //     $filename1 = time().'.'.$file1->getClientOriginalExtension();
+        //     $file1->move(public_path('upload/client_images'),$filename1);
+        //     $data->cover_photo = $filename1;
+        // }
+
+
 
         $data->save();
 

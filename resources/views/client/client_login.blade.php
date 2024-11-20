@@ -47,7 +47,7 @@
                                         <p class="text-muted mt-2">Sign in to continue to Client.</p>
                                     </div>
 
-                                    {{-- @if ($errors->any())
+                                    @if ($errors->any())
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
                                         @endforeach
@@ -58,7 +58,7 @@
                                     @endif
                                     @if (Session::has('success'))
                                         <li>{{ Session::get('success') }}</li>
-                                    @endif --}}
+                                    @endif
                                     <form class="mt-4 pt-2" action="{{ route('client.login_submit') }}" method="post">
                                         @csrf
 
@@ -130,7 +130,7 @@
                                     </div>
 
                                     <div class="mt-5 text-center">
-                                        <p class="text-muted mb-0">Don't have an account ? <a href="auth-register.html"
+                                        <p class="text-muted mb-0">Don't have an account ? <a href="{{route('client.register')}}"
                                                 class="text-primary fw-semibold"> Signup now </a> </p>
                                     </div>
                                 </div>
