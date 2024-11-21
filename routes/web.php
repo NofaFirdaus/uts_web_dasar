@@ -91,14 +91,13 @@ Route::middleware('client')->group(function () {
         Route::get('/changeStatus', 'ChangeStatus');
     });
 
-    Route::controller(RestaurantController::class)->group(function(){
+    Route::controller(RestaurantController::class)->group(function () {
         Route::get('/all/gallery', 'AllGallery')->name('all.gallery');
-        Route::get('/add/product', 'AddProduct')->name('add.product');
-        Route::post('/store/product', 'StoreProduct')->name('product.store');
-        Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
-        Route::post('/update/product', 'UpdateProduct')->name('product.update');
-        Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
-        Route::get('/changeStatus', 'ChangeStatus');
+        Route::get('/add/gallery', 'AddGallery')->name('add.gallery');
+        Route::post('/store/gallery', 'StoreGallery')->name('gallery.store');
+        Route::get('/edit/gallery/{id}', 'EditGallery')->name('edit.gallery');
+        Route::post('/update/gallery', 'UpdateGallery')->name('gallery.update');
+        Route::get('/delete/gallery/{id}', 'DeleteGallery')->name('delete.gallery');
     });
 });
 Route::get('/client/login', [ClientController::class, 'ClientLogin'])->name('client.login');
@@ -108,3 +107,5 @@ Route::post('/client/login_submit', [ClientController::class, 'ClientLoginSubmit
 Route::get('/client/logout', [ClientController::class, 'ClientLogout'])->name('client.logout');
 
 
+
+//mengasumsikan mengerjakan ta, didalam tugas mengangkat tema apa,no 2 jenis pengujian apa sesuai judulnya apa, pengujian sesuai dengan searching jurnal, tentukan pertanyan responden,berapa responden yang mengisi  ,sertakan refrensi, terus sebutkan alasan kenapa

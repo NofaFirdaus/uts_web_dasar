@@ -22,7 +22,7 @@
                 </div>
             </div>
             <!-- end page title -->
-
+            ategory_name
             <div class="row">
                 <div class="col-xl-9 col-lg-8">
                     <div class="card">
