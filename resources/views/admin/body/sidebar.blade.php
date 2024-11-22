@@ -62,15 +62,15 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li>
-                        {{-- <a href="{{ route('admin.all.product') }}">
+                        <a href="{{ route('admin.all.product') }}">
                             <span data-key="t-calendar">All Product</span>
-                        </a> --}}
+                        </a>
                 </li>
 
                 <li>
-                    {{-- <a href="{{ route('admin.add.product') }}">
+                    <a href="{{ route('admin.add.product') }}">
                         <span data-key="t-chat">Add Product</span>
-                    </a> --}}
+                    </a>
                 </li>
 
             </ul>

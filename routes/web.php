@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\admin\ManageController;
 
 
 Route::get('/', [UserController::class, 'Index'])->name('index');
@@ -52,6 +53,16 @@ Route::middleware('admin')->group(function () {
         Route::post('/update/city', 'UpdateCity')->name('city.update');
         Route::get('/delete/city/{id}', 'DeleteCity')->name('delete.city');
     });
+
+    Route::controller(ManageController::class)->group(function () {
+        Route::get('/admin/all/product', 'AdminAllProduct')->name('admin.all.product');
+        Route::get('/admin/add/product', 'AdminAddProduct')->name('admin.add.product');
+        Route::post('/admin/store/product', 'AdminStoreProduct')->name('admin.product.store');
+        Route::get('/admin/edit/product/{id}', 'AdminEditProduct')->name('admin.edit.product');
+        Route::post('/admin/update/product', 'AdminUpdateProduct')->name('admin.product.update');
+        Route::get('/admin/delete/product/{id}', 'AdminDeleteProduct')->name('admin.delete.product');
+
+    });
 });
 
 Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
@@ -89,7 +100,6 @@ Route::middleware('client')->group(function () {
         Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
         Route::post('/update/product', 'UpdateProduct')->name('product.update');
         Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
-        Route::get('/changeStatus', 'ChangeStatus');
     });
 
     Route::controller(RestaurantController::class)->group(function () {
@@ -119,4 +129,4 @@ Route::get('/client/logout', [ClientController::class, 'ClientLogout'])->name('c
 
 
 
-//mengasumsikan mengerjakan ta, didalam tugas mengangkat tema apa,no 2 jenis pengujian apa sesuai judulnya apa, pengujian sesuai dengan searching jurnal, tentukan pertanyan responden,berapa responden yang mengisi  ,sertakan refrensi, terus sebutkan alasan kenapa
+Route::get('/changeStatus', [RestaurantController::class, 'ChangeStatus']);
