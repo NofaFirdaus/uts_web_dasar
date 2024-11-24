@@ -1,6 +1,7 @@
 @extends('frontend.dashboard.dashboard')
 @section('dashboard')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
 
     @php
         $products = App\Models\Product::where('client_id', $client->id)
@@ -126,8 +127,8 @@
                                                             ${{ $populer->discount_price }}
                                                         @endif
                                                         <span class="float-right">
-                                                            {{-- <a class="btn btn-outline-secondary btn-sm"
-                                                                href="{{ route('add_to_cart', $populer->id) }}">ADD</a> --}}
+                                                            <a class="btn btn-outline-secondary btn-sm"
+                                                                href="{{ route('add_to_cart', $populer->id) }}">ADD</a>
                                                         </span>
                                                     </a>
                                                 </div>
@@ -156,8 +157,7 @@
                                                 <div class="list-card-image">
                                                     <div class="star position-absolute"><span
                                                             class="badge badge-success"><i class="icofont-star"></i> 3.1
-                                                            (300+)
-                                                        </span></div>
+                                                            (300+)</span></div>
                                                     <div class="favourite-heart text-danger position-absolute"><a
                                                             href="#"><i class="icofont-heart"></i></a></div>
                                                     <div class="member-plan position-absolute"><span
@@ -184,8 +184,8 @@
                                                                     href="#">${{ $bestseller->discount_price }} </a>
                                                             @endif
                                                             <span class="float-right">
-                                                                {{-- <a class="btn btn-outline-secondary btn-sm"
-                                                                    href="{{ route('add_to_cart', $bestseller->id) }}">ADD</a> --}}
+                                                                <a class="btn btn-outline-secondary btn-sm"
+                                                                    href="{{ route('add_to_cart', $bestseller->id) }}">ADD</a>
                                                             </span>
                                                         </p>
                                                     </div>
@@ -207,8 +207,8 @@
 
                                                 @foreach ($menu->products as $product)
                                                     <div class="menu-list p-3 border-bottom">
-                                                        {{-- <a class="btn btn-outline-secondary btn-sm  float-right"
-                                                            href="{{ route('add_to_cart', $product->id) }}">ADD</a> --}}
+                                                        <a class="btn btn-outline-secondary btn-sm  float-right"
+                                                            href="{{ route('add_to_cart', $product->id) }}">ADD</a>
 
                                                         <div class="media">
                                                             <img class="mr-3 rounded-pill"
@@ -217,8 +217,7 @@
                                                             <div class="media-body">
                                                                 <h6 class="mb-1">{{ $product->name }}</h6>
                                                                 <p class="text-gray mb-0">${{ $product->price }}
-                                                                    ({{ $product->size ?? '' }} cm)
-                                                                </p>
+                                                                    ({{ $product->size ?? '' }} cm)</p>
 
                                                             </div>
                                                         </div>
@@ -367,18 +366,18 @@
                                     <h5 class="mb-4">Ratings and Reviews</h5>
                                     <div class="graph-star-rating-header">
                                         <div class="star-rating">
-                                            {{-- @for ($i = 1; $i <= 5; $i++)
+                                            @for ($i = 1; $i <= 5; $i++)
                                                 <a href="#"><i
                                                         class="icofont-ui-rating {{ $i <= round($roundedAverageRating) ? 'active' : '' }}"></i></a>
-                                            @endfor --}}
-                                            {{-- <b class="text-black ml-2">{{ $totalReviews }}</b> --}}
+                                            @endfor
+                                            <b class="text-black ml-2">{{ $totalReviews }}</b>
                                         </div>
-                                        {{-- <p class="text-black mb-4 mt-2">Rated {{ $roundedAverageRating }} out of 5</p> --}}
+                                        <p class="text-black mb-4 mt-2">Rated {{ $roundedAverageRating }} out of 5</p>
                                     </div>
 
                                     <div class="graph-star-rating-body">
 
-                                        {{-- @foreach ($ratingCounts as $star => $count)
+                                        @foreach ($ratingCounts as $star => $count)
                                             <div class="rating-list">
                                                 <div class="rating-list-left text-black">
                                                     {{ $star }} Star
@@ -396,7 +395,7 @@
                                                 <div class="rating-list-right text-black">
                                                     {{ number_format($ratingPercentages[$star], 2) }}%</div>
                                             </div>
-                                        @endforeach --}}
+                                        @endforeach
 
                                     </div>
 
@@ -418,15 +417,15 @@
                                             color: #dd646e;
                                         }
                                     </style>
-                                    {{-- @php
+                                    @php
                                         $reviews = App\Models\Review::where('client_id', $client->id)
                                             ->where('status', 1)
                                             ->latest()
                                             ->limit(5)
                                             ->get();
-                                    @endphp --}}
+                                    @endphp
 
-                                    {{-- @foreach ($reviews as $review)
+                                    @foreach ($reviews as $review)
                                         <div class="reviews-members pt-4 pb-4">
                                             <div class="media">
                                                 <a href="#"><img alt="Generic placeholder image"
@@ -467,7 +466,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endforeach --}}
+                                    @endforeach
 
                                     <hr>
 
@@ -685,8 +684,8 @@
 
                         </div>
 
-                        {{-- <a href="{{ route('checkout') }}" class="btn btn-success btn-block btn-lg">Checkout <i
-                                class="icofont-long-arrow-right"></i></a> --}}
+                        <a href="{{ route('checkout') }}" class="btn btn-success btn-block btn-lg">Checkout <i
+                                class="icofont-long-arrow-right"></i></a>
                     </div>
 
                     <div class="text-center pt-2 mb-4">
@@ -736,7 +735,47 @@
                 removeFromCart(id);
             });
 
+            function updateQuantity(id, quantity) {
+                $.ajax({
+                    url: '{{ route('cart.updateQuantity') }}',
+                    method: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: id,
+                        quantity: quantity
+                    },
+                    success: function(response) {
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Quantity Updated'
+                        }).then(() => {
+                            location.reload();
+                        });
 
+                    }
+                })
+            }
+
+            function removeFromCart(id) {
+                $.ajax({
+                    url: '{{ route('cart.remove') }}',
+                    method: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: id
+                    },
+                    success: function(response) {
+
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Cart Remove Successfully'
+                        }).then(() => {
+                            location.reload();
+                        });
+
+                    }
+                });
+            }
 
 
 
