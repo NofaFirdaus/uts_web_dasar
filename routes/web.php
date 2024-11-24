@@ -12,7 +12,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\admin\ManageController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\OrderController;
-use App\Http\Controllers\Admin\ManageOrderController;
+use App\Http\Controllers\admin\ManageOrderController;
 
 
 Route::get('/', [UserController::class, 'Index'])->name('index');
@@ -158,7 +158,12 @@ Route::middleware(['client', 'status'])->group(function () {
         Route::get('/delete/coupon/{id}', 'DeleteCoupon')->name('delete.coupon');
 
     });
+    Route::controller(ManageOrderController::class)->group(function () {
+        Route::get('/all/client/orders', 'AllClientOrders')->name('all.client.orders');
+        Route::get('/client/order/details/{id}', 'ClientOrderDetails')->name('client.order.details');
+    });
 });
+
 Route::get('/client/login', [ClientController::class, 'ClientLogin'])->name('client.login');
 Route::get('/client/register', [ClientController::class, 'ClientRegister'])->name('client.register');
 Route::post('/client/register/submit', [ClientController::class, 'ClientRegisterSubmit'])->name('client.register.submit');

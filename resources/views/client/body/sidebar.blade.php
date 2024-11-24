@@ -112,9 +112,9 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
-                            {{-- <a href="{{ route('all.client.orders') }}">
+                            <a href="{{ route('all.client.orders') }}">
                         <span data-key="t-calendar">All Orders</span>
-                    </a> --}}
+                    </a>
                         </li>
                     </ul>
                 </li>
