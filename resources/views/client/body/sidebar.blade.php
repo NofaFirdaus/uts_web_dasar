@@ -1,8 +1,8 @@
-{{-- @php
+@php
     $id = Auth::guard('client')->id();
     $client = App\Models\Client::find($id);
     $status = $client->status;
-@endphp --}}
+@endphp
 <div class="vertical-menu">
 
     <div data-simplebar class="h-100">
@@ -19,7 +19,7 @@
                         <span data-key="t-dashboard">Dashboard</span>
                     </a>
                 </li>
-                {{-- @if ($status === '1') --}}
+                @if ($status === '1')
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="grid"></i>
@@ -146,8 +146,8 @@
                         </li>
                     </ul>
                 </li>
-                {{-- @else
-                @endif --}}
+                @else
+                @endif
 
 
 

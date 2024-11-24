@@ -118,7 +118,8 @@ class RestaurantController extends Controller
         $id = Auth::guard('client')->id();
         $category = Category::latest()->get();
         $city = City::latest()->get();
-        $menu = Menu::where('client_id', $id)->latest()->get();
+        // $menu = Menu::where('client_id', $id)->latest()->get();
+        $menu = Menu::latest()->get();
         return view('client.backend.product.add_product', compact('category', 'city', 'menu'));
     }
 

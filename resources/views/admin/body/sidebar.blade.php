@@ -84,15 +84,15 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li>
-                    {{-- <a href="{{ route('pending.restaurant') }}">
+                    <a href="{{ route('pending.restaurant') }}">
                         <span data-key="t-calendar">Pending Restaurant </span>
-                    </a> --}}
+                    </a>
                 </li>
 
                 <li>
-                    {{-- <a href="{{ route('approve.restaurant') }}">
+                    <a href="{{ route('approve.restaurant') }}">
                         <span data-key="t-chat">Approve Restaurant</span>
-                    </a> --}}
+                    </a>
                 </li>
 
             </ul>

@@ -14,6 +14,8 @@ return new class extends Migration {
             $table->id();
             $table->string('menu_name');
             $table->string('image')->nullable();
+            $table->unsignedBigInteger('client_id')->nullable();
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('set null');
             $table->timestamps();
         });
     }

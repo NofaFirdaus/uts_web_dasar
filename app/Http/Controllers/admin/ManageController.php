@@ -32,7 +32,7 @@ class ManageController extends Controller
         $city = City::latest()->get();
         $menu = Menu::latest()->get();
         $client = Client::latest()->get();
-        return view('admin.backend.product.add_product', compact('category', 'city', 'menu', 'client'));
+        return view('admin.backend.pr AdminStoreProductoduct.add_product', compact('category', 'city', 'menu', 'client'));
     }
 
     public function AdminStoreProduct(Request $request)
@@ -153,6 +153,26 @@ class ManageController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
+    }
+
+    public function PendingRestaurant()
+    {
+        $client = Client::where('status', 0)->get();
+        return view('admin.backend.restaurant.pending_restaurant', compact('client'));
+    }
+
+    public function ClientChangeStatus(Request $request)
+    {
+        $client = Client::find($request->client_id);
+        $client->status = $request->status;
+        $client->save();
+        return response()->json(['success' => 'Status Change Successfully']);
+    }
+    // End Method
+    public function ApproveRestaurant()
+    {
+        $client = Client::where('status', 1)->get();
+        return view('admin.backend.restaurant.approve_restaurant', compact('client'));
     }
 
 }
