@@ -124,7 +124,7 @@
                                             <h6 class="mb-3 mt-0">Cash</h6>
                                             <p>Please keep exact change handy to help us serve you better</p>
                                             <hr>
-                                            {{-- <form action="{{ route('cash_order') }}" method="post">
+                                            <form action="{{ route('cash_order') }}" method="post">
                                                 @csrf
 
                                                 <input type="hidden" name="name" value="{{ Auth::user()->name }}">
@@ -134,7 +134,7 @@
 
                                                 <button type="submit" class="btn btn-success btn-block btn-lg">PAY
                                                     <i class="icofont-long-arrow-right"></i></button>
-                                            </form> --}}
+                                            </form>
                                         </div>
 
                                         <div class="tab-pane fade" id="v-pills-home" role="tabpanel"

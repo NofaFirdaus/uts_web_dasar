@@ -11,7 +11,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\admin\ManageController;
 use App\Http\Controllers\Frontend\CartController;
-
+use App\Http\Controllers\Frontend\OrderController;
 
 Route::get('/', [UserController::class, 'Index'])->name('index');
 
@@ -166,4 +166,11 @@ Route::controller(CartController::class)->group(function () {
     Route::get('/remove-coupon', 'CouponRemove');
     Route::post('/apply-coupon', 'ApplyCoupon');
     Route::get('/checkout', 'ShopCheckout')->name('checkout');
+});
+
+Route::controller(OrderController::class)->group(function () {
+    Route::post('/cash_order', 'CashOrder')->name('cash_order');
+    Route::post('/stripe_order', 'StripeOrder')->name('stripe_order');
+    Route::post('/mark-notification-as-read/{notification}', 'MarkAsRead');
+
 });
