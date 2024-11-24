@@ -121,7 +121,7 @@
 
                         </div>
                         <div class="dropdown-cart-top-footer border-top p-2">
-                            {{-- <a class="btn btn-success btn-block btn-lg" href="{{ route('checkout') }}"> Checkout</a> --}}
+                            <a class="btn btn-success btn-block btn-lg" href="{{ route('checkout') }}"> Checkout</a>
                         </div>
                     </div>
                 </li>
