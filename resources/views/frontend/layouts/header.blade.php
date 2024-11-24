@@ -62,7 +62,7 @@
 
 
 
-                {{-- @php
+                @php
                     $total = 0;
                     $cart = session()->get('cart', []);
                     $groupedCart = [];
@@ -73,17 +73,17 @@
 
                     $clients = App\Models\Client::whereIn('id', array_keys($groupedCart))->get()->keyBy('id');
 
-                @endphp --}}
+                @endphp
 
                 <li class="nav-item dropdown dropdown-cart">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-shopping-basket"></i> Cart
-                        {{-- <span class="badge badge-success">{{ count((array) session('cart')) }}</span> --}}
+                        <span class="badge badge-success">{{ count((array) session('cart')) }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-cart-top p-0 dropdown-menu-right shadow-sm border-0">
 
-                        {{-- @foreach ($groupedCart as $clientId => $items)
+                        @foreach ($groupedCart as $clientId => $items)
                             @if (isset($clients[$clientId]))
                                 @php
                                     $client = $clients[$clientId];
@@ -95,11 +95,11 @@
                                     <p class="text-secondary mb-0">{{ $client->address }}</p>
                                 </div>
                             @endif
-                        @endforeach --}}
+                        @endforeach
 
 
                         <div class="dropdown-cart-top-body border-top p-4">
-                            {{-- @php $total = 0 @endphp
+                            @php $total = 0 @endphp
                             @if (session('cart'))
                                 @foreach (session('cart') as $id => $details)
                                     @php
@@ -112,7 +112,7 @@
                                             class="float-right text-secondary">${{ $details['price'] * $details['quantity'] }}</span>
                                     </p>
                                 @endforeach
-                            @endif --}}
+                            @endif
 
                         </div>
                         <div class="dropdown-cart-top-footer border-top p-4">

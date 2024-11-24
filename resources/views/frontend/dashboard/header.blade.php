@@ -56,7 +56,7 @@
                         </a>
                     </li>
                 @endauth
-                {{-- @php
+                @php
                     $total = 0;
                     $cart = session()->get('cart', []);
                     $groupedCart = [];
@@ -67,7 +67,7 @@
 
                     $clients = App\Models\Client::whereIn('id', array_keys($groupedCart))->get()->keyBy('id');
 
-                @endphp --}}
+                @endphp
 
                 <li class="nav-item dropdown dropdown-cart">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -77,7 +77,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-cart-top p-0 dropdown-menu-right shadow-sm border-0">
 
-                        {{-- @foreach ($groupedCart as $clientId => $items)
+                        @foreach ($groupedCart as $clientId => $items)
                             @if (isset($clients[$clientId]))
                                 @php
                                     $client = $clients[$clientId];
@@ -89,11 +89,11 @@
                                     <p class="text-secondary mb-0">{{ $client->address }}</p>
                                 </div>
                             @endif
-                        @endforeach --}}
+                        @endforeach
 
 
                         <div class="dropdown-cart-top-body border-top p-4">
-                            {{-- @php $total = 0 @endphp
+                            @php $total = 0 @endphp
                             @if (session('cart'))
                                 @foreach (session('cart') as $id => $details)
                                     @php
@@ -106,17 +106,17 @@
                                             class="float-right text-secondary">${{ $details['price'] * $details['quantity'] }}</span>
                                     </p>
                                 @endforeach
-                            @endif --}}
+                            @endif
 
                         </div>
                         <div class="dropdown-cart-top-footer border-top p-4">
                             <p class="mb-0 font-weight-bold text-secondary">Sub Total <span
                                     class="float-right text-dark">
-                                    {{-- @if (Session::has('coupon'))
+                                    @if (Session::has('coupon'))
                                         ${{ Session()->get('coupon')['discount_amount'] }}
                                     @else
                                         ${{ $total }}
-                                    @endif --}}
+                                    @endif
                                 </span></p>
 
                         </div>
