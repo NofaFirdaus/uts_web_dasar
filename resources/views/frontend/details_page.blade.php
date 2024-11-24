@@ -1,7 +1,6 @@
 @extends('frontend.dashboard.dashboard')
 @section('dashboard')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     @php
         $products = App\Models\Product::where('client_id', $client->id)
@@ -157,7 +156,8 @@
                                                 <div class="list-card-image">
                                                     <div class="star position-absolute"><span
                                                             class="badge badge-success"><i class="icofont-star"></i> 3.1
-                                                            (300+)</span></div>
+                                                            (300+)
+                                                        </span></div>
                                                     <div class="favourite-heart text-danger position-absolute"><a
                                                             href="#"><i class="icofont-heart"></i></a></div>
                                                     <div class="member-plan position-absolute"><span
@@ -217,7 +217,8 @@
                                                             <div class="media-body">
                                                                 <h6 class="mb-1">{{ $product->name }}</h6>
                                                                 <p class="text-gray mb-0">${{ $product->price }}
-                                                                    ({{ $product->size ?? '' }} cm)</p>
+                                                                    ({{ $product->size ?? '' }} cm)
+                                                                </p>
 
                                                             </div>
                                                         </div>
@@ -735,47 +736,47 @@
                 removeFromCart(id);
             });
 
-            // function updateQuantity(id, quantity) {
-            //     $.ajax({
-                    // url: '',
-            //         method: 'POST',
-            //         data: {
-            //             _token: '{{ csrf_token() }}',
-            //             id: id,
-            //             quantity: quantity
-            //         },
-            //         success: function(response) {
-            //             Toast.fire({
-            //                 icon: 'success',
-            //                 title: 'Quantity Updated'
-            //             }).then(() => {
-            //                 location.reload();
-            //             });
+            function updateQuantity(id, quantity) {
+                $.ajax({
+                    url: '{{ route('cart.updateQuantity') }}',
+                    method: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: id,
+                        quantity: quantity
+                    },
+                    success: function(response) {
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Quantity Updated'
+                        }).then(() => {
+                            location.reload();
+                        });
 
-            //         }
-            //     })
-            // }
+                    }
+                })
+            }
 
-            // function removeFromCart(id) {
-            //     $.ajax({
-            //         url: '',
-            //         method: 'POST',
-            //         data: {
-            //             _token: '{{ csrf_token() }}',
-            //             id: id
-            //         },
-            //         success: function(response) {
+            function removeFromCart(id) {
+                $.ajax({
+                    url: '{{ route('cart.remove') }}',
+                    method: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        id: id
+                    },
+                    success: function(response) {
 
-            //             Toast.fire({
-            //                 icon: 'success',
-            //                 title: 'Cart Remove Successfully'
-            //             }).then(() => {
-            //                 location.reload();
-            //             });
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Cart Remove Successfully'
+                        }).then(() => {
+                            location.reload();
+                        });
 
-            //         }
-            //     });
-            // }
+                    }
+                });
+            }
 
 
 

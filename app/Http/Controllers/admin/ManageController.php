@@ -19,6 +19,7 @@ use App\Models\Banner;
 use App\Models\Client;
 
 
+
 class ManageController extends Controller
 {
     public function AdminAllProduct()

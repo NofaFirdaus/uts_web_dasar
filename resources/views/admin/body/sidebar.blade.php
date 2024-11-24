@@ -120,24 +120,24 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                 <li>
-                    {{-- <a href="{{ route('pending.order') }}">
+                    <a href="{{ route('pending.order') }}">
                         <span data-key="t-calendar">Pending Orders </span>
-                    </a> --}}
+                    </a>
                 </li>
                 <li>
-                    {{-- <a href="{{ route('confirm.order') }}">
+                    <a href="{{ route('confirm.order') }}">
                         <span data-key="t-calendar">Confirm Orders </span>
-                    </a> --}}
+                    </a>
                 </li>
                 <li>
-                    {{-- <a href="{{ route('processing.order') }}">
+                    <a href="{{ route('processing.order') }}">
                         <span data-key="t-calendar">Processing Orders </span>
-                    </a> --}}
+                    </a>
                 </li>
                 <li>
-                    {{-- <a href="{{ route('deliverd.order') }}">
+                    <a href="{{ route('deliverd.order') }}">
                         <span data-key="t-calendar">Deliverd Orders </span>
-                    </a> --}}
+                    </a>
                 </li>
 
             </ul>

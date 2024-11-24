@@ -124,9 +124,8 @@
                                             <h6 class="mb-3 mt-0">Cash</h6>
                                             <p>Please keep exact change handy to help us serve you better</p>
                                             <hr>
-                                            <form action="{{ route('cash_order') }}" method="post">
+                                            <form action="{{route('cash_order') }}" method="post">
                                                 @csrf
-
                                                 <input type="hidden" name="name" value="{{ Auth::user()->name }}">
                                                 <input type="hidden" name="email" value="{{ Auth::user()->email }}">
                                                 <input type="hidden" name="phone" value="{{ Auth::user()->phone }}">
