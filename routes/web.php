@@ -29,6 +29,13 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/all/wishlist', [HomeController::class, 'AllWishlist'])->name('all.wishlist');
     Route::get('/remove/wishlist/{id}', [HomeController::class, 'RemoveWishlist'])->name('remove.wishlist');
+
+    Route::controller(ManageOrderController::class)->group(function () {
+        Route::get('/user/order/list', 'UserOrderList')->name('user.order.list');
+        Route::get('/user/order/details/{id}', 'UserOrderDetails')->name('user.order.details');
+        Route::get('/user/invoice/download/{id}', 'UserInvoiceDownload')->name('user.invoice.download');
+
+    });
 });
 
 require __DIR__ . '/auth.php';
@@ -179,6 +186,8 @@ Route::controller(HomeController::class)->group(function () {
 
 
 });
+
+
 
 
 Route::controller(CartController::class)->group(function () {

@@ -38,11 +38,11 @@
                         class="icofont-food-cart"></i> Favourites </a>
             </li>
 
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link {{ Route::currentRouteName() === 'user.order.list' ? 'active' : '' }}"
                     href="{{ route('user.order.list') }}" role="tab" aria-controls="orders" aria-selected="true"><i
                         class="icofont-food-cart"></i> Orders </a>
-            </li> --}}
+            </li>
 
 
             <li class="nav-item">
