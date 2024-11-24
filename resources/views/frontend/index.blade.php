@@ -55,20 +55,20 @@
                                     @else
                                     @endif
 
-                                    {{-- <a href="{{ route('res.details', $client->id) }}">
-                                        <img src="{{ asset('upload/client_images/' . $client->photo) }}"
+                                    <a href="{{ route('res.details', $client->id) }}">
+                                        <img src="{{ !empty($client->photo) ? asset('upload/client_images/' . $client->photo) : asset('upload/no_image.jpg') }}"
                                             class="img-fluid item-img" style="width: 300px; height:200px;">
-                                    </a> --}}
+                                    </a>
                                 </div>
                                 <div class="p-3 position-relative">
                                     <div class="list-card-body">
-                                        {{-- <h6 class="mb-1"><a href="{{ route('res.details', $client->id) }}"
+                                        <h6 class="mb-1"><a href="{{ route('res.details', $client->id) }}"
                                                 class="text-black">{{ $client->name }}</a></h6>
                                         <p class="text-gray mb-3"> {{ $menuNamesString }}</p>
                                         <p class="text-gray mb-3 time"><span
                                                 class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i
                                                     class="icofont-wall-clock"></i> 20–25 min</span> </p>
-                                    </div> --}}
+                                    </div>
                                     <div class="list-card-badge">
                                         @if ($coupons)
                                             <span class="badge badge-success">OFFER</span> <small>{{ $coupons->discount }}%

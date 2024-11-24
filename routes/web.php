@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\UserController;
@@ -145,3 +146,7 @@ Route::get('/client/logout', [ClientController::class, 'ClientLogout'])->name('c
 
 
 Route::get('/changeStatus', [RestaurantController::class, 'ChangeStatus']);
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/restaurant/details/{id}', 'RestaurantDetails')->name('res.details');
+
+});
