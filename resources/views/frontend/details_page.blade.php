@@ -198,7 +198,7 @@
                                 </div>
 
 
-                                {{-- @foreach ($menus as $menu)
+                                @foreach ($menus as $menu)
                                     <div class="row">
                                         <h5 class="mb-4 mt-3 col-md-12">{{ $menu->menu_name }} <small
                                                 class="h6 text-black-50">{{ $menu->products->count() }} ITEMS</small></h5>
@@ -210,7 +210,7 @@
                                                         {{-- <a class="btn btn-outline-secondary btn-sm  float-right"
                                                             href="{{ route('add_to_cart', $product->id) }}">ADD</a> --}}
 
-                                                        {{-- <div class="media">
+                                                        <div class="media">
                                                             <img class="mr-3 rounded-pill"
                                                                 src="{{ asset($product->image) }}"
                                                                 alt="Generic placeholder image">
@@ -228,7 +228,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach --}} --}}
+                                @endforeach
 
                             </div>
 
@@ -238,14 +238,14 @@
                                     <div class="restaurant-slider-main position-relative homepage-great-deals-carousel">
                                         <div class="owl-carousel owl-theme homepage-ad">
 
-                                            {{-- @foreach ($gallerys as $index => $gallery)
+                                            @foreach ($gallerys as $index => $gallery)
                                                 <div class="item">
                                                     <img class="img-fluid" src="{{ asset($gallery->gallery_img) }}">
                                                     <div
                                                         class="position-absolute restaurant-slider-pics bg-dark text-white">
                                                         {{ $index + 1 }} of {{ $gallerys->count() }} Photos</div>
                                                 </div>
-                                            @endforeach --}}
+                                            @endforeach
 
                                         </div>
 
