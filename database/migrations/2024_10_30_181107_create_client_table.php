@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->int('client_id')->nullable();
+            // $table->int('client_id')->nullable();
             $table->text('shop_info')->nullable();
             $table->text('cover_photo')->nullable();
             $table->string('role')->default('client');
