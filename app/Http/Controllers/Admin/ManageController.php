@@ -34,7 +34,7 @@ class ManageController extends Controller
         $city = City::latest()->get();
         $menu = Menu::latest()->get();
         $client = Client::latest()->get();
-        return view('admin.backend.pr AdminStoreProductoduct.add_product', compact('category', 'city', 'menu', 'client'));
+        return view('admin.backend.product.add_product', compact('category', 'city', 'menu', 'client'));
     }
 
     public function AdminStoreProduct(Request $request)

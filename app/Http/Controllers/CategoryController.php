@@ -29,7 +29,7 @@ class CategoryController extends Controller
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
             $img = $manager->read($image);
-            $img->resize(300, 300)->save(public_path('upload/category/' . $name_gen));
+                $img->resize(300, 300)->save(public_path('upload/category/' . $name_gen));
             $save_url = 'upload/category/' . $name_gen;
             Category::create([
                 'category_name' => $request->category_name,
