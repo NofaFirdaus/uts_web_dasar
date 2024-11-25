@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CouponController;
-use App\Http\Controllers\admin\ManageController;
+use App\Http\Controllers\Admin\ManageController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\OrderController;
-use App\Http\Controllers\admin\ManageOrderController;
+use App\Http\Controllers\Admin\ManageOrderController;
 
 
 Route::get('/', [UserController::class, 'Index'])->name('index');
