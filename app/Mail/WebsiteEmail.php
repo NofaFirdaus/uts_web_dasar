@@ -15,7 +15,7 @@ class WebsiteEmail extends Mailable
 
     public $subject,$body;
     /**
-     * Create a new message instance.
+     * Create a new message instance.resources/views/admin/backend/report/all_report.blade.php
      */
     public function __construct($subject,$body)
     {

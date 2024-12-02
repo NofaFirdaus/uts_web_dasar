@@ -152,7 +152,7 @@
                 <span data-key="t-components">Manage Reports</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-                {{-- <li><a href="{{ route('admin.all.reports') }}" data-key="t-alerts">All Reports</a></li> --}}
+                <li><a href="{{ route('admin.all.reports') }}" data-key="t-alerts">All Reports</a></li>
 
 
             </ul>

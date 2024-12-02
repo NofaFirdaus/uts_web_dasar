@@ -48,6 +48,7 @@
 
                                 <tbody>
                                     @foreach ($product as $key => $item)
+                                    {{dd($item['menu']['menu_name'])}}
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td><img src="{{ asset($item->image) }}" alt=""
