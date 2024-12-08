@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\ManageController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Admin\ManageOrderController;
+use App\Http\Controllers\Frontend\ReviewController;
 
 
 Route::get('/', [UserController::class, 'Index'])->name('index');
@@ -108,13 +109,19 @@ Route::middleware('admin')->group(function () {
         Route::get('/processing_to_deliverd/{id}', 'ProcessingToDiliverd')->name('processing_to_deliverd');
 
     });
-    Route::controller(ReportController::class)->group(function(){
+    Route::controller(ReviewController::class)->group(function () {
+        Route::get('/admin/pending/review', 'AdminPendingReview')->name('admin.pending.review');
+        Route::get('/admin/approve/review', 'AdminApproveReview')->name('admin.approve.review');
+        Route::get('/reviewchangeStatus', 'ReviewChangeStatus');
+    });
+
+    Route::controller(ReportController::class)->group(function () {
         Route::get('/admin/all/reports', 'AminAllReports')->name('admin.all.reports');
         Route::post('/admin/search/bydate', 'AminSearchByDate')->name('admin.search.bydate');
         Route::post('/admin/search/bymonth', 'AminSearchByMonth')->name('admin.search.bymonth');
         Route::post('/admin/search/byyear', 'AminSearchByYear')->name('admin.search.byyear');
-        });
-    });//end admin middleware
+    });
+});//end admin middleware
 
 
 Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
@@ -178,7 +185,7 @@ Route::middleware(['client', 'status'])->group(function () {
     });
 
 
-    Route::controller(ReportController::class)->group(function(){
+    Route::controller(ReportController::class)->group(function () {
         Route::get('/client/all/reports', 'ClientAllReports')->name('client.all.reports');
         Route::post('/client/search/bydate', 'ClientSearchByDate')->name('client.search.bydate');
         Route::post('/client/search/bymonth', 'ClientSearchByMonth')->name('client.search.bymonth');
@@ -220,4 +227,9 @@ Route::controller(OrderController::class)->group(function () {
     // Route::post('/stripe_order', 'StripeOrder')->name('stripe_order');
     // Route::post('/mark-notification-as-read/{notification}', 'MarkAsRead');
 
+
+    Route::controller(ReviewController::class)->group(function () {
+        Route::post('/store/review', 'StoreReview')->name('store.review');
+
+    });
 });

@@ -367,18 +367,18 @@
                                     <h5 class="mb-4">Ratings and Reviews</h5>
                                     <div class="graph-star-rating-header">
                                         <div class="star-rating">
-                                            {{-- @for ($i = 1; $i <= 5; $i++)
+                                            @for ($i = 1; $i <= 5; $i++)
                                                 <a href="#"><i
                                                         class="icofont-ui-rating {{ $i <= round($roundedAverageRating) ? 'active' : '' }}"></i></a>
-                                            @endfor --}}
-                                            {{-- <b class="text-black ml-2">{{ $totalReviews }}</b> --}}
+                                            @endfor
+                                            <b class="text-black ml-2">{{ $totalReviews }}</b>
                                         </div>
-                                        {{-- <p class="text-black mb-4 mt-2">Rated {{ $roundedAverageRating }} out of 5</p> --}}
+                                        <p class="text-black mb-4 mt-2">Rated {{ $roundedAverageRating }} out of 5</p>
                                     </div>
 
                                     <div class="graph-star-rating-body">
 
-                                        {{-- @foreach ($ratingCounts as $star => $count)
+                                        @foreach ($ratingCounts as $star => $count)
                                             <div class="rating-list">
                                                 <div class="rating-list-left text-black">
                                                     {{ $star }} Star
@@ -396,7 +396,7 @@
                                                 <div class="rating-list-right text-black">
                                                     {{ number_format($ratingPercentages[$star], 2) }}%</div>
                                             </div>
-                                        @endforeach --}}
+                                        @endforeach
 
                                     </div>
 
@@ -418,15 +418,15 @@
                                             color: #dd646e;
                                         }
                                     </style>
-                                    {{-- @php
+                                    @php
                                         $reviews = App\Models\Review::where('client_id', $client->id)
                                             ->where('status', 1)
                                             ->latest()
                                             ->limit(5)
                                             ->get();
-                                    @endphp --}}
+                                    @endphp
 
-                                    {{-- @foreach ($reviews as $review)
+                                    @foreach ($reviews as $review)
                                         <div class="reviews-members pt-4 pb-4">
                                             <div class="media">
                                                 <a href="#"><img alt="Generic placeholder image"
@@ -467,7 +467,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endforeach --}}
+                                    @endforeach
 
                                     <hr>
 
@@ -500,7 +500,7 @@
 
                                         <h5 class="mb-4">Leave Comment</h5>
                                         <p class="mb-2">Rate the Place</p>
-                                        {{-- <form method="post" action="{{ route('store.review') }}">
+                                        <form method="post" action="{{ route('store.review') }}">
                                             @csrf
                                             <input type="hidden" name="client_id" value="{{ $client->id }}">
 
@@ -542,7 +542,7 @@
                                                 <button class="btn btn-primary btn-sm" type="submit"> Submit Comment
                                                 </button>
                                             </div>
-                                        </form> --}}
+                                        </form>
 
                                     @endguest
                                 </div>
