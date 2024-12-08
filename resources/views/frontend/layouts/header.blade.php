@@ -16,10 +16,10 @@
                             class="badge badge-warning">New</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    {{-- <a class="nav-link" href="{{ route('list.restaurant') }}" role="button" aria-haspopup="true"
-                        aria-expanded="false"> --}}
-                    {{-- Restaurants --}}
-                    {{-- </a> --}}
+                    <a class="nav-link" href="{{ route('list.restaurant') }}" role="button" aria-haspopup="true"
+                        aria-expanded="false">
+                        Restaurants
+                    </a>
 
                 </li>
 
@@ -118,16 +118,16 @@
                         <div class="dropdown-cart-top-footer border-top p-4">
                             <p class="mb-0 font-weight-bold text-secondary">Sub Total <span
                                     class="float-right text-dark">
-                                    {{-- @if (Session::has('coupon'))
+                                    @if (Session::has('coupon'))
                                         ${{ Session()->get('coupon')['discount_amount'] }}
                                     @else
                                         ${{ $total }}
-                                    @endif --}}
+                                    @endif
                                 </span></p>
 
                         </div>
                         <div class="dropdown-cart-top-footer border-top p-2">
-                            {{-- <a class="btn btn-success btn-block btn-lg" href="{{ route('checkout') }}"> Checkout</a> --}}
+                            <a class="btn btn-success btn-block btn-lg" href="{{ route('checkout') }}"> Checkout</a>
                         </div>
                     </div>
                 </li>

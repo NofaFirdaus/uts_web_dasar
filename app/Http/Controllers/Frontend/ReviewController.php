@@ -43,10 +43,17 @@ class ReviewController extends Controller
         $approveReview = Review::where('status', 1)->orderBy('id', 'desc')->get();
         return view('admin.backend.review.view_approve_review', compact('approveReview'));
     }
-    public function ReviewChangeStatus(Request $request){
+    public function ReviewChangeStatus(Request $request)
+    {
         $review = Review::find($request->review_id);
         $review->status = $request->status;
         $review->save();
         return response()->json(['success' => 'Status Change Successfully']);
+    }
+    public function ClientAllReviews()
+    {
+        $id = Auth::guard('client')->id();
+        $allreviews = Review::where('status', 1)->where('client_id', $id)->orderBy('id', 'desc')->get();
+        return view('client.backend.review.view_all_review', compact('allreviews'));
     }
 }
