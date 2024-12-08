@@ -191,6 +191,13 @@ Route::middleware(['client', 'status'])->group(function () {
         Route::post('/client/search/bymonth', 'ClientSearchByMonth')->name('client.search.bymonth');
         Route::post('/client/search/byyear', 'ClientSearchByYear')->name('client.search.byyear');
     });
+
+    Route::controller(ReviewController::class)->group(function(){
+        Route::get('/client/all/reviews', 'ClientAllReviews')->name('client.all.reviews');
+
+    });
+
+    //end client middleware
 });
 
 Route::get('/client/login', [ClientController::class, 'ClientLogin'])->name('client.login');
