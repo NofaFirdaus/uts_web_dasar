@@ -15,6 +15,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Admin\ManageOrderController;
 use App\Http\Controllers\Frontend\ReviewController;
+use App\Http\Controllers\Frontend\FilterController;
 
 
 Route::get('/', [UserController::class, 'Index'])->name('index');
@@ -233,10 +234,13 @@ Route::controller(OrderController::class)->group(function () {
     Route::post('/cash_order', 'CashOrder')->name('cash_order');
     // Route::post('/stripe_order', 'StripeOrder')->name('stripe_order');
     // Route::post('/mark-notification-as-read/{notification}', 'MarkAsRead');
+});
+Route::controller(ReviewController::class)->group(function () {
+    Route::post('/store/review', 'StoreReview')->name('store.review');
+});
 
+Route::controller(FilterController::class)->group(function(){
+    Route::get('/list/restaurant', 'ListRestaurant')->name('list.restaurant');
+    Route::get('/filter/products', 'FilterProducts')->name('filter.products');
 
-    Route::controller(ReviewController::class)->group(function () {
-        Route::post('/store/review', 'StoreReview')->name('store.review');
-
-    });
 });

@@ -16,10 +16,10 @@
                             class="badge badge-warning">New</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="{{ route('list.restaurant') }}" role="button" aria-haspopup="true"
+                    {{-- <a class="nav-link" href="{{ route('list.restaurant') }}" role="button" aria-haspopup="true"
                         aria-expanded="false">
                         Restaurants
-                    </a>
+                    </a> --}}
 
                 </li>
 

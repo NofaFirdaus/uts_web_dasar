@@ -56,7 +56,7 @@
                                     @endif
 
                                     <a href="{{ route('res.details', $client->id) }}">
-                                        <img src="{{ !empty($client->photo) ? asset('upload/client_images/' . $client->photo) : asset('upload/no_image.jpg') }}"
+                                        <img src="{{ asset('upload/client_images/' . $client->photo) }}"
                                             class="img-fluid item-img" style="width: 300px; height:200px;">
                                     </a>
                                 </div>
