@@ -124,8 +124,9 @@
                                             <h6 class="mb-3 mt-0">Cash</h6>
                                             <p>Please keep exact change handy to help us serve you better</p>
                                             <hr>
-                                            <form action="{{route('cash_order') }}" method="post">
+                                            <form action="{{ route('cash_order') }}" method="post">
                                                 @csrf
+
                                                 <input type="hidden" name="name" value="{{ Auth::user()->name }}">
                                                 <input type="hidden" name="email" value="{{ Auth::user()->email }}">
                                                 <input type="hidden" name="phone" value="{{ Auth::user()->phone }}">
@@ -148,7 +149,7 @@
                                                         class="icofont-discover-alt"></i> <i class="icofont-jcb-alt"></i>
                                                 </span>
                                             </p>
-                                            {{-- <form action="{{ route('stripe_order') }}" method="post" id="payment-form">
+                                            <form action="{{ route('stripe_order') }}" method="post" id="payment-form">
                                                 @csrf
                                                 <label for="card-element"></label>
                                                 <input type="hidden" name="name" value="{{ Auth::user()->name }}">
@@ -165,7 +166,7 @@
                                                 <br>
                                                 <button type="submit" class="btn btn-success btn-block btn-lg">PAY
                                                     <i class="icofont-long-arrow-right"></i></button>
-                                            </form> --}}
+                                            </form>
                                         </div>
 
 
@@ -307,9 +308,8 @@
     <script type="text/javascript">
         // Create a Stripe client.
         var stripe = Stripe(
-            'pk_test_51Oml5cGAwoXiNtjJgPPyQngDj9WTjawya4zCsqTn3LPFhl4VvLZZJIh9fW9wqVweFYC5f0YEb9zjUqRpXbkEKT7T00eU1xQvjp'
+            'pk_test_51QTvu1HMrmYCDSvTkHjSoqzIUw39rdxP5Uq8JKFscgb3oO1gG7qEegokusNFd01PkZZu7bY6HPf5ZEvfYLWC3geg00k3SRlR5T'
             );
-        // Create an instance of Elements.
         var elements = stripe.elements();
         // Custom styling can be passed to options when creating an Element.
         // (Note that this demo uses a wider set of styles than the guide below.)
